@@ -111,6 +111,7 @@ import ThetaClientBase from './ThetaClientBase';
 interface IAuthConfig {
   user: string;
   pass: string;
+  realm: string;
 }
 
 export default class ThetaHttpClient extends ThetaClientBase {
@@ -745,8 +746,7 @@ export default class ThetaHttpClient extends ThetaClientBase {
   ): Promise<AxiosResponse> {
     const config: AxiosRequestConfig = { ...axiosConfig, ...protocol, data };
     if (this.auth) {
-      const { user, pass } = this.auth;
-      const realm = 'RICOH THETA V';
+      const { user, pass, realm } = this.auth;
       const method = protocol.method.toUpperCase();
       const uri = protocol.url;
       const algorithm = 'MD5';
