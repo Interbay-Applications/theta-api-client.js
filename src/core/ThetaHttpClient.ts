@@ -156,7 +156,7 @@ export default class ThetaHttpClient extends ThetaClientBase {
   public async oscInfo(
     config: AxiosRequestConfig = {}
   ): Promise<AxiosResponse> {
-    return this.send(config, Protocols.Info, {});
+    return this.send(config, Protocols.Info, null);
   }
   /**
    * API POST /osc/state
@@ -743,6 +743,7 @@ export default class ThetaHttpClient extends ThetaClientBase {
       | ICommandsStatusReq
       | IOpenSourceLicensesReq
       | IOpenPluginPageReq
+      | null
   ): Promise<AxiosResponse> {
     const config: AxiosRequestConfig = { ...axiosConfig, ...protocol, data };
     if (this.auth) {

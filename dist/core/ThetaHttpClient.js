@@ -96,7 +96,7 @@ var ThetaHttpClient = /** @class */ (function (_super) {
         if (config === void 0) { config = {}; }
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.send(config, httpClient_1.Protocols.Info, {})];
+                return [2 /*return*/, this.send(config, httpClient_1.Protocols.Info, null)];
             });
         });
     };
